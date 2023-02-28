@@ -8,7 +8,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
-        android:background="@color/yellow"
+        android:background="@color/light_blue"
         android:id="@+id/constraintTopBar"
         android:layout_height="100dp"
         app:layout_constraintTop_toTopOf="parent"

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardFood"
-    android:backgroundTint="@color/yellow"
+    android:backgroundTint="#D6D6D6"
     android:layout_margin="10dp"
     app:cardCornerRadius="10dp"
     app:cardElevation="10dp"
