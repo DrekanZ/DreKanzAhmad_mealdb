@@ -14,6 +14,12 @@ class FoodDetailViewModel(application: Application) : AndroidViewModel(applicati
 
     private val database = Room.databaseBuilder(application, MealsDatabase::class.java, "meal").build()
 
+    suspend fun getMealList() : List<MealsEntity> {
+        return withContext(Dispatchers.IO) {
+            database.mealsDetailsDao().getAllMeals()
+        }
+    }
+
     fun insertMeal(meal: MealsEntity) = viewModelScope.launch {
         database.mealsDetailsDao().insertMeal(meal)
     }

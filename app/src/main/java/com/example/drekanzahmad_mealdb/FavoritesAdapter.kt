@@ -7,16 +7,17 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.drekanzahmad_mealdb.databinding.ItemSeafoodMainBinding
-import com.example.drekanzahmad_mealdb.model.MealsItem
+import com.example.drekanzahmad_mealdb.localdatabase.MealsEntity
 
-class FoodAdapter() : RecyclerView.Adapter<FoodAdapter.FoodViewHolder>() {
+class FavoritesAdapter() : RecyclerView.Adapter<FavoritesAdapter.FavoritesViewHolder>() {
 
-    private var dataFood :List<MealsItem> = listOf()
+    private var dataFood :List<MealsEntity> = listOf()
 
-    inner class FoodViewHolder(view : View) : RecyclerView.ViewHolder(view) {
+
+    inner class FavoritesViewHolder(view : View) : RecyclerView.ViewHolder(view) {
         private val binding = ItemSeafoodMainBinding.bind(view)
 
-        fun bind(meal: MealsItem) {
+        fun bind(meal: MealsEntity) {
             binding.apply {
                 foodName.text=meal.strMeal
 
@@ -33,12 +34,12 @@ class FoodAdapter() : RecyclerView.Adapter<FoodAdapter.FoodViewHolder>() {
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoritesViewHolder {
         val view= LayoutInflater.from(parent.context).inflate(R.layout.item_seafood_main,parent,false)
-        return FoodViewHolder(view)
+        return FavoritesViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: FoodViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: FavoritesViewHolder, position: Int) {
         return holder.bind(dataFood[position])
     }
 
@@ -46,7 +47,7 @@ class FoodAdapter() : RecyclerView.Adapter<FoodAdapter.FoodViewHolder>() {
         return dataFood.size
     }
 
-    fun setData(data : List<MealsItem>) {
+    fun setData(data : List<MealsEntity>) {
         dataFood = data
         notifyDataSetChanged()
     }

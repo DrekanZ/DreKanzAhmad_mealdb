@@ -1,5 +1,6 @@
 package com.example.drekanzahmad_mealdb
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -46,5 +47,10 @@ class MainActivity : AppCompatActivity() {
 
 
         })
+
+        binding.toFavoritesButton.setOnClickListener {
+            val intent = Intent(this,Favorites::class.java)
+            startActivity(intent)
+        }
     }
 }
