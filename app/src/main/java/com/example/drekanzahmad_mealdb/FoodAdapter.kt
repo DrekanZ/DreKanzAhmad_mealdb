@@ -1,5 +1,6 @@
 package com.example.drekanzahmad_mealdb
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,6 +25,9 @@ class FoodAdapter() : RecyclerView.Adapter<FoodAdapter.FoodViewHolder>() {
                     .into(foodImage)
 
                 itemView.setOnClickListener {
+                    val intent = Intent(itemView.context, FoodDetail::class.java)
+                    intent.putExtra(FoodDetail.EXTRA_FOOD, meal)
+                    itemView.context.startActivity(intent)
                 }
             }
         }
